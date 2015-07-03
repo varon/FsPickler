@@ -10,7 +10,7 @@
     <RootNamespace>Nessos.FsPickler</RootNamespace>
     <AssemblyName>FsPickler</AssemblyName>
     <Name>FsPickler</Name>
-    <TargetFSharpCoreVersion>4.3.0.0</TargetFSharpCoreVersion>
+    <TargetFSharpCoreVersion>2.3.0.0</TargetFSharpCoreVersion>
     <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
     <RestorePackages>true</RestorePackages>
   </PropertyGroup>
@@ -20,12 +20,12 @@
     <Optimize>false</Optimize>
     <Tailcalls>false</Tailcalls>
     <OutputPath Condition="'$(OutputPath)' == ''">bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;OPTIMIZE_FSHARP;PROTECT_STACK_OVERFLOWS;EMIT_IL</DefineConstants>
+    <DefineConstants>TRACE;DEBUG;OPTIMIZE_FSHARP;PROTECT_STACK_OVERFLOWS;EMIT_IL;NET35;NET35OR40</DefineConstants>
     <WarningLevel>3</WarningLevel>
     <DocumentationFile>..\..\bin\FsPickler.xml</DocumentationFile>
     <OtherFlags>
     </OtherFlags>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <TargetFrameworkProfile />
     <OutputPath>..\..\bin\</OutputPath>
   </PropertyGroup>
