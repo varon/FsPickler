@@ -170,7 +170,10 @@ type internal CompositePickler<'T> =
         else
 
 #if PROTECT_STACK_OVERFLOWS
+#if NET35
+#else
         do RuntimeHelpers.EnsureSufficientExecutionStack()
+#endif
 #endif
         let mutable isProperSubtype = false
         let mutable subtype = Unchecked.defaultof<Type>
@@ -336,7 +339,10 @@ type internal CompositePickler<'T> =
         else
 
 #if PROTECT_STACK_OVERFLOWS
+#if NET35
+#else
         do RuntimeHelpers.EnsureSufficientExecutionStack()
+#endif
 #endif
         let mutable isProperSubtype = false
         let mutable subtype = Unchecked.defaultof<Type>
@@ -412,7 +418,7 @@ type internal CompositePickler<'T> =
         if state.IsCancelled then () else
 
         let inline acceptNode () =
-            let preorder = state.VisitOrder.HasFlag VisitOrder.PreOrder
+            let preorder = (state.VisitOrder &&& VisitOrder.PreOrder) = VisitOrder.PreOrder
             let mutable shouldContinue = true
 
             if preorder && not p.m_SkipVisit then
@@ -447,7 +453,10 @@ type internal CompositePickler<'T> =
         else
 
 #if PROTECT_STACK_OVERFLOWS
+#if NET35
+#else
         do RuntimeHelpers.EnsureSufficientExecutionStack()
+#endif
 #endif
         let mutable isProperSubtype = false
         let mutable subtype = Unchecked.defaultof<Type>
